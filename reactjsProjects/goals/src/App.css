@@ -1,0 +1,307 @@
+@keyframes fadeIn {
+  0% { opacity: 0; visibility: hidden; }
+  100% { opacity: 1; visibility: visible; }
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+
+.fade-in {
+  animation: fadeIn 1s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 1s forwards;
+}
+
+.App {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: black; /* Light background color */
+  flex-direction: column;
+}
+
+.content {
+  
+  border: 1px solid #ccc; /* Light border for content */
+  border-radius: 8px;
+  
+  margin: 10%;
+  font-size: larger;font-family:'Segoe UI';
+  text-align: center;
+
+  color: white;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.829), 0 15px 30px rgba(255, 255, 255, 0.756); /* Deep shadow for 3D effect */
+  transform: scale(1.05); /* Slightly enlarges the element */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for interactive effects */
+  border-radius: 8px; /* Optional rounded corners */
+  z-index: 10; /* Elevates above other content */
+  margin-top: 200px;
+  width: 50%;
+}
+
+.content-title {
+  text-align: center;
+  margin-bottom: 15px; /* Adjust spacing as needed */
+}
+
+.content-rest {
+  text-align: left; /* Ensures the rest of the content is left-aligned */
+  padding: 0 20px; /* Optional: Adds some padding for better readability */
+}
+
+.blur-text {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 350px;
+  color: lightgrey; /* Adjust color as needed */
+  filter: blur(10px); /* Initial blur value */
+  transition: filter 0.5s ease; /* Smooth transition for the blur effect */
+  font-family:'Times New Roman';
+  
+}
+
+/* Existing styles... */
+
+.navbar {
+  width: 100%;
+  padding: 0 20px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0); /* Transparent background initially */
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 100;
+  transition: background-color 0.5s ease, backdrop-filter 0.5s ease; /* Smooth transition for background and filter */
+  backdrop-filter: blur(0px); /* No blur initially */
+}
+
+.navbar:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent light grey for glassy effect */
+  backdrop-filter: blur(10px); /* Apply blur for glass effect */
+}
+
+/* Adjustments for links and button inside navbar to ensure they are styled appropriately */
+.navbar a, .navbar button {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover, .navbar button:hover {
+  color: #000; /* Change text color on hover for better visibility */
+}
+
+/* Rest of your styles... */
+
+
+.nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+.scroll-down-arrow {
+  display: flex;
+  flex-direction: column; /* Stack the children (p and arrow) vertically */
+  align-items: center; /* Center the items horizontally */
+  justify-content: center; /* Center the items vertically (if the container has a specific height) */
+  font-size: 24px; /* Adjust font size as needed */
+  animation: bounce 2s infinite; /* Your existing bounce animation */
+  color: white;
+  padding: 30px;
+  max-width: 30%;
+  
+}
+
+.scroll-down-arrow p {
+  margin: 0; /* Removes default margin from <p> to tighten up the spacing */
+  text-align: center; /* Ensures the text within the <p> is centered, useful if it wraps */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-20px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.introText {
+  color: white;
+  text-align: center;
+  font-size: large;
+  margin: 20px;
+  
+ 
+}
+
+.homeText {
+  text-align: center;
+  
+}
+
+.introText ul {
+  padding: 0; /* Removes default padding */
+  list-style-type: none; /* Removes default list styling */
+}
+
+.introText button {
+  padding: 10px 20px;
+  background-color: #FFFFFF; /* Initial white background */
+  color: #000000; /* Initial black text */
+  border: 2px solid #FFFFFF; /* White border to blend with the initial background */
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Added transitions for background-color, color, and border-color */
+}
+
+.introText button:hover, .introText button:active {
+  background-color: #000000; /* Change background to black */
+  color: #FFFFFF; /* Change text to white */
+  border-color: #FFFFFF; /* Keep border white for contrast */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adjust box-shadow for hover effect */
+}
+
+.introText button:active {
+  transform: translateY(2px); /* Moves button down slightly when clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box-shadow for pressed effect */
+}
+
+
+.introTextPop {
+  border: 1px solid #ccc; /* Light border for content */
+  border-radius: 8px;
+  
+  margin: 10%;
+  font-size: larger;font-family:'Segoe UI';
+  text-align: center;
+
+  color: white;
+  text-align: center;
+  margin: 70px;
+  padding: 10px;
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.829), 0 15px 30px rgba(255, 255, 255, 0.756); /* Deep shadow for 3D effect */
+  transform: scale(1.05); /* Slightly enlarges the element */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for interactive effects */
+  border-radius: 8px; /* Optional rounded corners */
+  z-index: 10; /* Elevates above other content */
+  margin-top: 100px;
+  width: 50%;
+}
+
+
+
+
+@media screen and (max-width: 700px) {
+  .blur-text {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  font-size: 150px;
+  color: lightgrey; /* Adjust color as needed */
+  filter: blur(10px); /* Initial blur value */
+  transition: filter 0.5s ease; /* Smooth transition for the blur effect */
+  font-family:'Times New Roman';
+  }
+  .content {
+  
+    border: 1px solid #ccc; /* Light border for content */
+    border-radius: 8px;
+    
+    margin: 10%;
+    font-size: 12px;font-family:'Segoe UI';
+    text-align: center;
+  
+    color: white;
+    text-align: center;
+    margin: 70px;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.829), 0 15px 30px rgba(255, 255, 255, 0.756); /* Deep shadow for 3D effect */
+    transform: scale(1.05); /* Slightly enlarges the element */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for interactive effects */
+    border-radius: 8px; /* Optional rounded corners */
+    z-index: 10; /* Elevates above other content */
+    margin-top: 200px;
+    width: auto;
+    
+  }
+  .introText {
+    color: white;
+    text-align: center;
+    font-size: 8px;
+    margin: 10px;
+    
+   
+  }
+  .introTextPop {
+    border: 1px solid #ccc; /* Light border for content */
+    border-radius: 8px;
+    
+    margin: 20px;
+    font-size: 10px;font-family:'Segoe UI';
+    text-align: center;
+  
+    color: white;
+    text-align: center;
+    margin: 70px;
+    padding: 10px;
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.829), 0 15px 30px rgba(255, 255, 255, 0.756); /* Deep shadow for 3D effect */
+    transform: scale(1.05); /* Slightly enlarges the element */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for interactive effects */
+    border-radius: 8px; /* Optional rounded corners */
+    z-index: 10; /* Elevates above other content */
+    margin-top: 75px;
+    width: auto;
+  }
+  .introText button {
+    padding: 10px 20px;
+    background-color: #FFFFFF; /* Initial white background */
+    color: #000000; /* Initial black text */
+    border: 2px solid #FFFFFF; /* White border to blend with the initial background */
+    border-radius: 5px;
+    font-size: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Added transitions for background-color, color, and border-color */
+  }
+  
+  .introText button:hover, .introText button:active {
+    background-color: #000000; /* Change background to black */
+    color: #FFFFFF; /* Change text to white */
+    border-color: #FFFFFF; /* Keep border white for contrast */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Adjust box-shadow for hover effect */
+  }
+  
+  .introText button:active {
+    transform: translateY(2px); /* Moves button down slightly when clicked */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adjust box-shadow for pressed effect */
+  }
+  
+}
+
