@@ -3,9 +3,20 @@ frontend:
   phases:
     preBuild:
       commands:
+        - echo "Current directory:"
+        - pwd
+        - echo "Directory contents:"
+        - ls -la
+        - echo "Contents of package.json:"
+        - cat package.json
+        - echo "Node version:"
+        - node -v
+        - echo "NPM version:"
+        - npm -v
         - npm ci
     build:
       commands:
+        - echo "Starting build..."
         - npm run build
   artifacts:
     baseDirectory: .next
